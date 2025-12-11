@@ -13,7 +13,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", ":ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -24,12 +24,14 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     { import = "plugins" },
+    { import = "plugins.extra" },
+    { import = "lsp" },
   },
   -- automatically check for plugin update
   checker = { enabled = false },
   ui = {
     -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
-    border = "rounded",  --"rounded", "shadow", "solid", "double", "single", "none"
+    border = "rounded", --"rounded", "shadow", "solid", "double", "single", "none"
   },
 })
 

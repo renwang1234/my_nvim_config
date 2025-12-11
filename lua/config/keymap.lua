@@ -1,19 +1,35 @@
-vim.keymap.set("i", "<C-h>", "<Left>")
-vim.keymap.set("i", "<C-l>", "<Right>")
-vim.keymap.set("i", "<C-j>", "<Down>")
-vim.keymap.set("i", "<C-k>", "<Up>")
+-- Make sure to setup mapleader and maplocalleader before
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
-vim.keymap.set("i", "jk", "<Esc>")
+local mode_nv = {"n", "v"}
+local mode_n = {"n"}
+local mode_v = {"v"}
+local mode_i = {"i"}
 
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
+local keymappings = {
+  {from = "W",             to = ":w<CR>",                                         desc = "Save"},
+  {from = "Q",             to = ":q<CR>",                                         desc = "Quit"},
+  {from = ";",             to = ":",                      mode = mode_nv,         desc = "Command mode"},
+  {from = "jk",            to = "<esc>",                  mode = mode_i,          desc = "Exit insert mode"},
 
-vim.keymap.set({ "n", "x", "o" }, "<S-H>", "^", { desc = "Start of line" })
-vim.keymap.set({ "n", "x", "o" }, "<S-L>", "$", { desc = "End of line" })
+  -- Movement
+  {from = "<C-k>",         to = "<Up>",                   mode = mode_i,          desc = "Move up"},
+  {from = "<C-j>",         to = "<Down>",                 mode = mode_i,          desc = "Move down"},
+  {from = "<C-h>",         to = "<Left>",                 mode = mode_i,          desc = "Move left"},
+  {from = "<C-l>",         to = "<Right>",                mode = mode_i,          desc = "Move right"},
 
-vim.keymap.set({ "n", "x" }, "Q", "<CMD>:qa<CR>")
-vim.keymap.set({ "n", "x" }, "qq", "<CMD>:q<CR>")
+  -- Window & splits
+  {from = "<C-j>",         to = "<C-w>j",                 mode = mode_n,          desc = "Window up"},
+  {from = "<C-h>",         to = "<C-w>h",                 mode = mode_n,          desc = "Window down"},
+  {from = "<C-h>",         to = "<C-w>h",                 mode = mode_n,          desc = "Window left"},
+  {from = "<C-k>",         to = "<C-w>k",                 mode = mode_n,          desc = "Window right"},
 
-vim.keymap.set("n", "<A-z>", "<CMD>set wrap!<CR>", { desc = "Toggle line wrap" })
+  {from = "<leader>e",     to = ":Neotree toggle<CR>",    mode = mode_nv,         desc = "Toggle file explorer"}
+}
+
+for _, keymap in ipairs(keymappings) do
+  vim.keymap.set(keymap.mode or "n", keymap.from, keymap.to, { noremap = true, silent = true, desc = keymap.desc })
+end

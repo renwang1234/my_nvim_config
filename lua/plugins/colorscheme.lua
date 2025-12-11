@@ -19,7 +19,7 @@ return {
     g.everforest_inlay_hints_background = "none"                                 --"dimmed"
     g.everforest_diagnostic_virtual_text = "highlighted"                         --"grey","colored","highlighted"
     g.everforest_nvimtree_transparent_background = true
-    
+
     cmd("colorscheme everforest")
     cmd("highlight LineNr guifg=#757567")                                        --#55544a #42423a #757576
     cmd("highlight Comment guifg=#fad7f2")
