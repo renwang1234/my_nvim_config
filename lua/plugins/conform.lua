@@ -2,7 +2,7 @@ return {
   "stevearc/conform.nvim",
   opts = {
     formatters_by_ft = {
-      lua = { "lua_ls" },
+      lua = { "stylua" },
       c   = { "clang_format" },
       cpp = { "clang_format" },
     },
@@ -23,3 +23,4 @@ return {
     },
   },
 }
+
