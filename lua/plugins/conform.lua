@@ -11,16 +11,7 @@ return {
       timeout_ms = 500,
       lsp_format = "fallback",
     },
-
-    formatters = {
-      lua_ls = {
-        args = {
-          "--indent-width", "2",
-          "--indent-type", "Spaces",
-          "--stdin-from-filename", "$FILENAME",
-        },
-      },
-    },
   },
 }
+
 
