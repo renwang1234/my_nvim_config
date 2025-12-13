@@ -27,7 +27,11 @@ local keymappings = {
   {from = "<C-h>",         to = "<C-w>h",                 mode = mode_n,          desc = "Window left"},
   {from = "<C-k>",         to = "<C-w>k",                 mode = mode_n,          desc = "Window right"},
 
-  {from = "<leader>e",     to = ":Neotree toggle<CR>",    mode = mode_nv,         desc = "Toggle file explorer"}
+  -- open file explorer
+  {from = "<leader>e",     to = ":Neotree toggle<CR>",    mode = mode_nv,         desc = "Toggle file explorer"},
+
+  -- open lazy.lua
+  {from = "<leader>L",     to = ":Lazy<CR>",              mode = mode_n,          desc = "[Lazy] Open Lazy.nvim"},
 }
 
 for _, keymap in ipairs(keymappings) do
