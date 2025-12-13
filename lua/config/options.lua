@@ -20,7 +20,7 @@ vim.opt.startofline = false
 
 vim.opt.conceallevel = 2
 
-vim.o.signcolumn = "yes:1"
+vim.o.signcolumn = "yes"
 vim.o.foldenable = false
 vim.o.termguicolors = true
 
@@ -32,9 +32,32 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = "▸ ",
+  trail = "·",
+  extends = "→",
+  precedes = "←",
+  nbsp = "␣",
+}
+
+-- Disable swap/backup files
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+
+-- Persistent undo (very useful!)
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+
+-- Hide traditional cmdline
+vim.opt.cmdheight = 0
+-- lualine usually shows mode, so turn this off
+vim.opt.showmode = false
+-- Still useful even without visible cmdline
+vim.opt.showcmd = false
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
