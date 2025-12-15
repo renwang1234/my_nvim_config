@@ -44,8 +44,7 @@ return {
         component_separators = { left = "", right = "|" },
         section_separators = { left = "", right = "" },
       },
-      ignore_focus = {}，
-      always_show_tabline = false,
+      ignore_focus = {},
       globalstatus = false,
       refresh = {
         statusline = 1000,
@@ -178,9 +177,11 @@ return {
 
   {
     "nvim-mini/mini.animate",
-    version = '*'
+    version = '*',
+    opts = {}
   },
 }
+
 
 
 
