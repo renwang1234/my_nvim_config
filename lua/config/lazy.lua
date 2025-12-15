@@ -31,8 +31,5 @@ require("lazy").setup({
   ui = {
     -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
     border = "rounded", --"rounded", "shadow", "solid", "double", "single", "none"
-  },
-})
 
-vim.keymap.set("n", "<leader>L", "<CMD>Lazy<CR>", { desc = "[Lazy] Open Lazy.nvim" })
 
