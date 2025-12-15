@@ -45,7 +45,7 @@ return {
         section_separators = { left = "", right = "" },
       },
       ignore_focus = {}，
-      always_show_tabline = true,
+      always_show_tabline = false,
       globalstatus = false,
       refresh = {
         statusline = 1000,
@@ -181,6 +181,7 @@ return {
     version = '*'
   },
 }
+
 
 
 
