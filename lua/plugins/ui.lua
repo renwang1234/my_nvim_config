@@ -44,9 +44,7 @@ return {
         component_separators = { left = "", right = "|" },
         section_separators = { left = "", right = "" },
       },
-      ignore_focus = {},
-      always_divide_middle = true,
-
+      ignore_focus = {}，
       always_show_tabline = true,
       globalstatus = false,
       refresh = {
@@ -75,9 +73,6 @@ return {
       },
       tabline = {},
       extensions = {},
-      config = function(_, opts)
-        require('lualine').setup(opts)
-      end
     },
   },
 
@@ -186,5 +181,6 @@ return {
     version = '*'
   },
 }
+
 
 
