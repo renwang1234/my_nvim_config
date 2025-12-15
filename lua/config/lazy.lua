@@ -24,7 +24,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    { import = "plugins.extra" },
     { import = "lsp" },
   },
   -- automatically check for plugin update
@@ -36,3 +35,4 @@ require("lazy").setup({
 })
 
 vim.keymap.set("n", "<leader>L", "<CMD>Lazy<CR>", { desc = "[Lazy] Open Lazy.nvim" })
+
