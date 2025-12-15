@@ -46,10 +46,6 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
 
--- Persistent undo (very useful!)
-vim.opt.undofile = true
-vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
-
 -- Hide traditional cmdline
 vim.opt.cmdheight = 0
 -- lualine usually shows mode, so turn this off
@@ -66,7 +62,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 --python "env"
-vim.g.python3_host_prog = 'C:\\Users\\Yumi\\myenv\\Scripts\\python3'  -- 替換為你的虛擬環境路徑
+--vim.g.python3_host_prog = 'C:\\Users\\UserName\\myenv\\Scripts\\python3'  -- 替換為你的虛擬環境路徑
 
 
 vim.api.nvim_create_autocmd('ColorScheme', {
@@ -79,3 +75,4 @@ vim.api.nvim_create_autocmd('ColorScheme', {
       api.nvim_set_hl(0, 'FloatBorder', {bg="NONE"})
   end
 })
+
